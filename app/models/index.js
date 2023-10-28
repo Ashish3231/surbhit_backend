@@ -19,5 +19,6 @@ db.sequelize = sequelize
 
 db.user = require('./user.model.js')(sequelize, Sequelize)
 db.testimonial = require('./testimonial.model.js')(sequelize, Sequelize)
+db.company = require('./company.model.js')(sequelize, Sequelize)
 
 module.exports = db

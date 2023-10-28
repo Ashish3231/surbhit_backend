@@ -18,7 +18,6 @@ exports.findAll = async (req, res) => {
     return res.status(500).send({ message: error.message })
   }
 }
-
 //post user api
 exports.create = async (req,res) => {
     try {
