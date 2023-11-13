@@ -8,5 +8,6 @@ module.exports = function (app) {
 
   app.post('/company', controller.upadte)
   app.get('/company/:id', controller.findOne)
+  app.post('/email', controller.email)
 
 }

@@ -1,5 +1,6 @@
 const db = require('../models')
 const Company = db.company
+const mailer = require('../service/mailer')
 
 //post user api
 exports.upadte = async (req,res) => {
@@ -113,4 +114,10 @@ exports.findOne = async(req, res) => {
           message: 'Internal server error'
         })
     }
+}
+exports.email = async(req, res) => {
+    console.log("hi=============================")
+    const { name, email, subject, message } = req.body;
+    mailer.sendEmail(name, email, subject, message)
+    res.json({ name, email, subject, message });
 }
