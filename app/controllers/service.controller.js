@@ -37,7 +37,7 @@ exports.create = async (req,res) => {
         console.log("service: ",service)
         const { title, content } = JSON.parse(service)
         const newPost = await Service.create({ title, content, logo:thumbnail });
-        res.status(201).json({ message: 'Post created successfully', post: newPost });
+        res.status(201).json({success: true, message: 'Post created successfully', post: newPost });
     } catch (err) {
         console.error('Error creating post:', err);
         res.status(500).json({ error: 'Failed to create post' });
