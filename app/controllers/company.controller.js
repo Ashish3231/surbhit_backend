@@ -6,7 +6,7 @@ const mailer = require('../service/mailer')
 exports.upadte = async (req,res) => {
     try {
         const data = req.body
-        const { company, email, phone1, phone2, add1, add2, add3, city, state, country }= req.body
+        const { company, email, phone1, phone2, add1, add2, add3, city, state, country, title, content, about }= req.body
         console.log('company: ',data)
         let upadteColumnArray = []
         const companyData ={
@@ -31,7 +31,7 @@ exports.upadte = async (req,res) => {
             companyData.phone2 = phone2
         }
         if(add1){
-            upadteColumnArray.push('company')
+            upadteColumnArray.push('add1')
             companyData.add1 = add1
         }
         if(add2){
@@ -56,6 +56,18 @@ exports.upadte = async (req,res) => {
         if(country){
             upadteColumnArray.push('country')
             companyData.country = country
+        }
+        if(title){
+            upadteColumnArray.push('title')
+            companyData.title = title
+        }
+        if(content){
+            upadteColumnArray.push('content')
+            companyData.content = content
+        }
+        if(about){
+            upadteColumnArray.push('about')
+            companyData.about = about
         }
     
         if (!data) {

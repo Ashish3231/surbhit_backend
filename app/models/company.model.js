@@ -35,6 +35,15 @@ module.exports = (sequelize, Sequelize) => {
       },
       country: {
         type: Sequelize.STRING
+      },
+      title: {
+        type: Sequelize.TEXT
+      },
+      content: {
+        type: Sequelize.TEXT
+      },
+      about: {
+        type: Sequelize.TEXT
       }
     })
   
